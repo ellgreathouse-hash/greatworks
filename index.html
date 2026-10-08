@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ElliotGreat Works</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: quiet gallery. Masthead, two image-led sections in staggered columns, short contact footer. */
+:root {
+  color-scheme: light;
+  --bg: #eef1f3;
+  --surface: #ffffff;
+  --fg: #14202b;
+  --muted: #566572;
+  --accent: #1c6a73;
+  --line: #d3dae0;
+  --font-display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e161d; --surface: #16212a; --fg: #e8eef2; --muted: #93a1ad; --accent: #5cc2c9; --line: #25333e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e161d; --surface: #16212a; --fg: #e8eef2; --muted: #93a1ad; --accent: #5cc2c9; --line: #25333e;
+  color-scheme: dark;
+}
+[hidden] { display: none !important; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+img { max-width: 100%; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  padding-inline: 20px;
+  padding-block: 28px 56px;
+}
+.wrap { max-width: 1040px; margin: 0 auto; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible, .shot:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.mast { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.brand img { width: 52px; height: 52px; border-radius: 50%; display: block; flex: none; }
+.brand span { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.01em; }
+nav { display: flex; gap: 22px; font-size: 0.9rem; font-weight: 500; }
+nav a { color: var(--muted); text-decoration: none; padding: 4px 0; }
+nav a:hover { color: var(--fg); }
+
+.intro { padding-block: 52px 36px; max-width: 640px; }
+.intro h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(2.4rem, 7vw, 4rem); line-height: 1.05; letter-spacing: -0.01em; margin: 0 0 14px; text-wrap: balance; }
+.intro p { margin: 0; color: var(--muted); font-size: 1.05rem; max-width: 52ch; }
+
+section { padding-block: 34px; }
+.head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+h2 { font-family: var(--font-display); font-weight: 700; font-size: 1.7rem; margin: 0; letter-spacing: 0.005em; }
+.count { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.lede { color: var(--muted); max-width: 60ch; margin: 0 0 22px; }
+
+.grid { columns: 2; column-gap: 18px; }
+figure { margin: 0 0 18px; break-inside: avoid; }
+.shot { display: block; width: 100%; padding: 0; border: 0; background: var(--surface); cursor: zoom-in; border-radius: 4px; overflow: hidden; line-height: 0; }
+.shot img { width: 100%; height: auto; display: block; }
+figcaption { font-size: 0.85rem; color: var(--muted); padding-top: 8px; line-height: 1.45; }
+figcaption b { color: var(--fg); font-weight: 600; }
+
+.contact { border-top: 1px solid var(--line); margin-top: 20px; padding-top: 30px; display: grid; gap: 10px; }
+.contact p { margin: 0; color: var(--muted); }
+.mail { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.mail code { font-family: var(--font-body); font-size: 1.05rem; font-weight: 500; color: var(--fg); user-select: all; overflow-wrap: anywhere; }
+button.copy { font: inherit; font-size: 0.85rem; font-weight: 500; color: var(--accent); background: transparent; border: 1px solid var(--accent); border-radius: 999px; padding: 5px 14px; cursor: pointer; }
+button.copy:hover { background: var(--accent); color: var(--bg); }
+
+.lb { position: fixed; inset: 0; background: rgba(8, 12, 16, 0.92); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 10; cursor: zoom-out; }
+.lb img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+
+@media (max-width: 640px) {
+  .grid { columns: 1; }
+  .intro { padding-block: 36px 24px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .shot img { transition: transform 0.4s ease; }
+  .shot:hover img { transform: scale(1.015); }
+}
+</style>
+<meta name="description" content="Portrait photography and WMU Men's Club Soccer social media content by Elliot Greathouse.">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div class="brand">
+      <img src="img/logo.png" alt="ElliotGreat Works logo: a camera lens marked EG over a harbor with an orca fin">
+      <span>ElliotGreat Works</span>
+    </div>
+    <nav aria-label="Sections">
+      <a href="#portraits">Portraits</a>
+      <a href="#soccer">Club Soccer</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="intro">
+    <h1>Elliot Greathouse</h1>
+    <p>Portrait photography on the side, and social media content for Western Michigan University Men's Club Soccer.</p>
+  </div>
+
+  <section id="portraits" aria-labelledby="h-portraits">
+    <div class="head">
+      <h2 id="h-portraits">Portraits</h2>
+      <span class="count">4 photos</span>
+    </div>
+    <p class="lede">Portrait sessions I shoot on the side, including graduation shoots.</p>
+    <div class="grid">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge photo"><img src="img/portrait-white-polo.jpg" alt="A smiling young man in a white zip polo and black pants sitting on concrete steps" loading="lazy"></button>
+      </figure>
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge photo"><img src="img/grad-purple.jpg" alt="A graduate in a purple gown and layered leis standing at a waterfront railing at night" loading="lazy"></button>
+      </figure>
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge photo"><img src="img/portrait-gray-polo.jpg" alt="A young man in a gray polo and light pants seated on concrete steps, looking at the camera" loading="lazy"></button>
+      </figure>
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge photo"><img src="img/grad-yellow.jpg" alt="A graduate in a cap and gold stoles smiling in a bright gallery space with a large yellow painting" loading="lazy"></button>
+      </figure>
+    </div>
+  </section>
+
+  <section id="soccer" aria-labelledby="h-soccer">
+    <div class="head">
+      <h2 id="h-soccer">WMU Men's Club Soccer</h2>
+      <span class="count">Instagram &middot; 4 posts</span>
+    </div>
+    <p class="lede">I started the team's Instagram, @wmumensclubsoccer. These are posts from the account: the season schedule, power rankings, a playoff match day and an event promotion.</p>
+    <div class="grid">
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge post"><img src="img/soccer-schedule-2024.jpg" alt="Official 2024 Schedule graphic with the team photo and opponent logos" loading="lazy"></button>
+        <figcaption><b>Official 2024 Schedule.</b> Season schedule graphic with the conference opponents' logos.</figcaption>
+      </figure>
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge post"><img src="img/soccer-match-day.jpg" alt="Match Day graphic for Regional Playoffs Game 1, Western #11 versus Purdue #6, Grant Park, 11 AM" loading="lazy"></button>
+        <figcaption><b>Regional Playoffs, Game 1.</b> Match-day graphic: Western (#11) vs. Purdue (#6), Grant Park, 11 AM, 2024.</figcaption>
+      </figure>
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge post"><img src="img/soccer-power-rankings.jpg" alt="MASC Power Rankings graphic showing 14th, with two players in black and white action shots" loading="lazy"></button>
+        <figcaption><b>MASC Power Rankings: 14th.</b> Ranking post built around two player photos.</figcaption>
+      </figure>
+      <figure>
+        <button class="shot" type="button" aria-label="Enlarge post"><img src="img/soccer-fc24-tournament.jpg" alt="EA Sports FC 24 Intramural Sports Tournament flyer, October 12 at 7 p.m., Esports Arena in Kalamazoo" loading="lazy"></button>
+        <figcaption><b>EA Sports FC 24 Intramural Tournament.</b> Event promotion with WMU Esports and the Student Recreation Center, Oct. 12, 7 p.m.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="h-contact">
+    <h2 id="h-contact">Contact</h2>
+    <p>For photo sessions or social media work, email me.</p>
+    <div class="mail">
+      <code id="email">ellgreathouse@gmail.com</code>
+      <button class="copy" id="copy" type="button">Copy email</button>
+    </div>
+    <p><a href="https://www.linkedin.com/in/elliot-greathouse/" target="_blank" rel="noopener">LinkedIn</a></p>
+  </section>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-label="Enlarged image"><img id="lbimg" alt=""></div>
+
+<script>
+(function () {
+  var lb = document.getElementById('lb');
+  var lbimg = document.getElementById('lbimg');
+  document.querySelectorAll('.shot').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var im = b.querySelector('img');
+      lbimg.src = im.src;
+      lbimg.alt = im.alt;
+      lb.hidden = false;
+    });
+  });
+  function close() { lb.hidden = true; lbimg.removeAttribute('src'); }
+  lb.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) close(); });
+
+  var btn = document.getElementById('copy');
+  var email = document.getElementById('email');
+  btn.addEventListener('click', function () {
+    function selectText() {
+      var r = document.createRange(); r.selectNodeContents(email);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Selected, press copy';
+    }
+    try {
+      navigator.clipboard.writeText(email.textContent).then(function () {
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = 'Copy email'; }, 1800);
+      }, selectText);
+    } catch (e) { selectText(); }
+  });
+})();
+</script>
+</body>
+</html>
